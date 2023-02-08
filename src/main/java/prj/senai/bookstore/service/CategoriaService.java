@@ -5,6 +5,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import prj.senai.bookstore.domain.Categoria;
+import prj.senai.bookstore.exceptions.ObjetNotFoundException;
 import prj.senai.bookstore.repositories.CategoriaRepository;
 
 @Service
@@ -15,7 +16,7 @@ public class CategoriaService {
 
     public Categoria findById(Integer id){
         Optional<Categoria> obj = repository.findById(id);
-        return obj.orElse(null);
+        return obj.orElseThrow(() -> new ObjetNotFoundException("Objeto não encontrado! Id: " + id + ", Tipo: " + Categoria.class.getName()));
     }
     
 }
