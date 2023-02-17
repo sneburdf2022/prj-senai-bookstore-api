@@ -2,15 +2,23 @@ package prj.senai.bookstore.dtos;
 
 import java.io.Serializable;
 import prj.senai.bookstore.domain.Livro;
+import jakarta.validation.constraints.NotEmpty;
+import org.hibernate.validator.constraints.Length;
 
 public class LivroDTO implements Serializable {
 
     private static final long serialVersionUID = 1l;
 
     private Integer id;
-    private String titulo;
-    private String nome_autor;
-    private String texto;
+    @NotEmpty(message = "Campo Título é requerido")
+	@Length(min=3,max=150, message = "O capo Título ter entre 3 entre 150 caracteres")
+	private String titulo;
+	@NotEmpty(message = "Campo Nome Autor é requerido")
+	@Length(min=3,max=100, message = "O capo Nome Autor ter entre 3 entre 100 caracteres")
+	private String nome_autor;
+	@NotEmpty(message = "Campo Texto é requerido")
+	@Length(min=3,max=20000, message = "O capo Texto ter entre 3 entre 20000 caracteres")
+	private String texto;
 
     
     public LivroDTO() {

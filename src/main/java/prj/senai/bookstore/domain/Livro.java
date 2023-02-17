@@ -10,6 +10,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.validation.constraints.NotEmpty;
+import org.hibernate.validator.constraints.Length;
 
 @Entity
 public class Livro implements Serializable {
@@ -18,8 +20,15 @@ public class Livro implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+
+	@NotEmpty(message = "Campo Título é requerido")
+	@Length(min=3,max=150, message = "O capo Título ter entre 3 entre 150 caracteres")
 	private String titulo;
+	@NotEmpty(message = "Campo Nome Autor é requerido")
+	@Length(min=3,max=100, message = "O capo Nome Autor ter entre 3 entre 100 caracteres")
 	private String nome_autor;
+	@NotEmpty(message = "Campo Texto é requerido")
+	@Length(min=3,max=20000, message = "O capo Texto ter entre 3 entre 20000 caracteres")
 	private String texto;
 	
 	@JsonIgnore
