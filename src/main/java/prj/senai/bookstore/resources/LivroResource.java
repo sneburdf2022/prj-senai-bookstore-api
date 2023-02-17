@@ -2,6 +2,7 @@ package prj.senai.bookstore.resources;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,7 +24,7 @@ import java.util.stream.Collectors;
 import java.net.URI; 
 import prj.senai.bookstore.dtos.LivroDTO;
 
-
+@CrossOrigin("*")
 @RestController
 @RequestMapping(value="/livros")
 public class LivroResource {

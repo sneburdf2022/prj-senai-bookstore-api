@@ -1,4 +1,4 @@
-package prj.senai.bookstore.exceptions;
+package prj.senai.bookstore.resources.exceptions;
 
 public class StandarError {
     private long timestamp;

@@ -8,8 +8,8 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 import prj.senai.bookstore.domain.Categoria;
 import prj.senai.bookstore.dtos.CategoriaDTO;
-import prj.senai.bookstore.exceptions.ObjetNotFoundException;
 import prj.senai.bookstore.repositories.CategoriaRepository;
+import prj.senai.bookstore.service.exceptions.ObjetNotFoundException;
 
 @Service
 public class CategoriaService {
@@ -42,7 +42,7 @@ public class CategoriaService {
         try {
             repository.deleteById(id);    
         } catch (DataIntegrityViolationException e) {
-            throw new prj.senai.bookstore.exceptions.DataIntegrityViolationException("A categoria não pode ser deletada! Possui livros associados.");
+            throw new prj.senai.bookstore.service.exceptions.DataIntegrityViolationException("A categoria não pode ser deletada! Possui livros associados.");
         }
         
     }

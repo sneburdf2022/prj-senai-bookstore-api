@@ -1,4 +1,4 @@
-package prj.senai.bookstore.exceptions;
+package prj.senai.bookstore.service.exceptions;
 
 public class ObjetNotFoundException extends RuntimeException {
     private static final long serialVersionUID = 1L;

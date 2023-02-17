@@ -9,9 +9,8 @@ import org.springframework.stereotype.Service;
 import prj.senai.bookstore.domain.Categoria;
 import prj.senai.bookstore.domain.Livro;
 import prj.senai.bookstore.dtos.LivroDTO;
-import prj.senai.bookstore.exceptions.ObjetNotFoundException;
-
 import prj.senai.bookstore.repositories.LivroRepository;
+import prj.senai.bookstore.service.exceptions.ObjetNotFoundException;
 
 @Service
 public class LivroService {

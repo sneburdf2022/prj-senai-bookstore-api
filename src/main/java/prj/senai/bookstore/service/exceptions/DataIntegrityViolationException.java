@@ -1,4 +1,4 @@
-package prj.senai.bookstore.exceptions;
+package prj.senai.bookstore.service.exceptions;
 
 public class DataIntegrityViolationException extends  RuntimeException{
 
