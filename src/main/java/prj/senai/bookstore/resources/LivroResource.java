@@ -42,16 +42,7 @@ public class LivroResource {
         List<LivroDTO> listDTO = list.stream().map(obj -> new LivroDTO(obj)).collect(Collectors.toList());
         return ResponseEntity.ok().body(listDTO);
     }
-    @PostMapping
-    public ResponseEntity<Livro> create(
-        @RequestParam(value = "categoria", defaultValue = "0") Integer id_cat,
-        @RequestBody Livro obj){
-        Livro newObj = service.create(id_cat,obj);
-        URI uri = ServletUriComponentsBuilder.fromCurrentContextPath().path("/livros/{id}").buildAndExpand(newObj.getId()).toUri();
-        return ResponseEntity.created(uri).build();
-        //return ResponseEntity.created(uri).build();
-    }
-
+    
     @PutMapping(value="/{id}")
     public ResponseEntity<Livro> update(@PathVariable Integer id, @RequestBody Livro obj){
         Livro newObj = service.update(id,obj);
@@ -61,6 +52,16 @@ public class LivroResource {
     public ResponseEntity<Livro> updatePatch(@PathVariable Integer id, @RequestBody Livro obj){
         Livro newObj = service.updatePatch(id,obj);
         return ResponseEntity.ok().body(newObj);
+    }
+
+    @PostMapping
+    public ResponseEntity<Livro> create(
+        @RequestParam(value = "categoria", defaultValue = "0") Integer id_cat,
+        @RequestBody Livro obj){
+        Livro newObj = service.create(id_cat,obj);
+        URI uri = ServletUriComponentsBuilder.fromCurrentContextPath().path("/livros/{id}").buildAndExpand(newObj.getId()).toUri();
+        return ResponseEntity.created(uri).build();
+        //return ResponseEntity.created(uri).build();
     }
 
     @DeleteMapping(value="/{id}")
