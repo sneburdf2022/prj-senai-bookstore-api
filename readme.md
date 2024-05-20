@@ -1,5 +1,5 @@
-<h1 align="center">Olá o Rubens Oliveira</h1>
-<h3 align="center">Esse projeto é um exmplo em java que uso como base para o pessoal treinar frontend</h3>
+<h1 align="center">Olá </h1>
+<h3 align="center">Esse projeto é um exmplo em java que uso como base para treinar frontend</h3>
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=sneburdf2022&label=Profile%20views&color=0e75b6&style=flat" alt="sneburdf2022" /> </p>
 
 - 🤝 Utilizem como quiser
